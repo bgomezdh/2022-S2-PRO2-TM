@@ -1,11 +1,21 @@
 /* Importar */
-const db = require('../db/data');
+/* const db = require('../db/data'); */
+
+const db = require('../database/models');
+const movie = db.Movie;
 
 /* Desarrollar */
 const movieController = {
     index : function(req, res) {
 
-        return res.render('movies', {peliculas : db.lista});
+        movie.findAll()
+        .then((result) => {
+            return res.render('movies', {peliculas : result});
+        }).catch((err) => {
+            console.log(err);
+        });
+
+        
     }
 }
 
