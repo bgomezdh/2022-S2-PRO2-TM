@@ -16,3 +16,8 @@ a {
 .list-group-item{
   background-color: #f3f3f3;background-color: #f3f3f3;
 }
+
+.cont-logo{
+  display: flex;
+  align-items: center;
+}
