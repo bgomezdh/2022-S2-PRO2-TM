@@ -17,7 +17,7 @@
         <% for( let i = 0; i < peliculas.length; i++ ) { %>
           <li class="list-group-item d-flex justify-content-between align-items-start">
               <div class="ms-2 me-auto">
-                  <div class="fw-bold"><a href="/movie/detalle/<%= peliculas[i].id %>"><%= peliculas[i].title %></a></div>
+                  <div class="fw-bold"><a href="/movies/detalle/<%= peliculas[i].id %>"><%= peliculas[i].title %></a></div>
                     <%= peliculas[i].release_date %>
                   </div>
               <span class="badge bg-primary rounded-pill"><%= peliculas[i].rating %></span>
