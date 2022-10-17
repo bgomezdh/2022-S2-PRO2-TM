@@ -28,6 +28,12 @@
               <p class="card-text"><small class="text-muted">Genre : <%= movie.genres.name %> </small></p>
               <p class="card-text"><small class="text-muted">Genre ranking : <%= movie.genres.ranking %> </small></p>
             </div>
+            <h2>Actores</h2>
+            <ul>
+              <% for( let i = 0; i < movie.actors.length; i++ ) { %>
+              <li><%= movie.actors[i].first_name %> </li>
+              <% } %>
+            </ul>
           </div>
         </div>
       </div>

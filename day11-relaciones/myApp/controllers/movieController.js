@@ -30,11 +30,15 @@ const movieController = {
                     all : true,
                     nested: true
                 }
+                // {association:'genre'},
+                // {association:'actors'}
+
             ]
         };
           
         movie.findByPk(id, relaciones)
         .then((result) => {
+            console.log(result.actors);
             return res.render("detalleMovies", {movie : result})
         })
         .catch((err) =>{
