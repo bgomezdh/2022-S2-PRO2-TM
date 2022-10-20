@@ -9,4 +9,10 @@ router.get('/detalle/:id', movieController.show);
 
 router.get('/busqueda', movieController.showOne);
 
+/* Mostrar el formulario de Movie */
+router.get('/register', movieController.create)
+
+/* Guardar la info del formulario de movie */
+router.post('/register', movieController.store )
+
 module.exports = router;

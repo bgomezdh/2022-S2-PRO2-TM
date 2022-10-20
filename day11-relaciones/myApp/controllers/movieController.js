@@ -64,6 +64,18 @@ const movieController = {
             return res.redirect("/")
         });
         
+    },
+    /* Mostrar el form de la peli */
+    create : (req, res) =>{
+        return res.render("registerMovie");
+    },
+    /* Guardar una peli */
+    store: (req, res) => {
+        /* return res.send(req.body) */
+        let peliculaAGuardar = req.body;
+        /* luego la tengo que guardar en la DB */
+
+        return res.redirect("/movies");
     }
 }
 
