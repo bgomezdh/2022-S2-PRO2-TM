@@ -21,3 +21,12 @@ a {
   display: flex;
   align-items: center;
 }
+
+.nav-item{
+  border-right: 1px solid white;
+}
+
+.nav-item a:hover{
+  background-color: rgba(255, 255, 255, 0.431);
+  
+}

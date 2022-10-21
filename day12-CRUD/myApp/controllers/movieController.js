@@ -67,7 +67,7 @@ const movieController = {
     },
     /* Mostrar el form de la peli */
     create : (req, res) =>{
-        return res.render("registerUser");
+        return res.render("registerMovie");
     },
     /* Guardar una peli */
     store: (req, res) => {
