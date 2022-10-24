@@ -77,51 +77,46 @@ const movieController = {
 
         return res.redirect("/movies");
     },
-    /*Update*/
     update:(req,res)=>{
-        let id = req.params.id
-        console.log(id);
+        let id = req.params.id;
         movie.findByPk(id)
-        .then((result) => {
-           
-            return res.render("updateMovie",{movie:result.dataValues})
+        .then((result)=>{
+            return res.render('updateMovie',{movie:result.dataValues})
         })
-        .catch((err) =>{
-            return res.redirect("/")
-        });
+        .catch(erro=>console.log(erro))
         
-
     },
     updatePost:(req,res)=>{
         let filtro = {
             where:[{id:req.body.id}]
         }
-        let info=req.body;
-        movie.update(info,filtro)
-        .then((result) => {
-           
-            return res.redirect("/movies");
-        })
-        .catch((err) =>{
-            return res.redirect("/")
-        });
+        let info = req.body;
 
-    },
-    destroy: function(req, res){
-        let movieABorrar = req.body.id;
-        
-        db.Movie.destroy({
-            where: [
-                {id : movieABorrar}
-            ]
+        movie.update(info,filtro)
+        .then((result)=>{
+            return res.redirect('/movies')
         })
-            .then( () => {
-                 return res.redirect('/');
-            })
-            .catch( error => { 
-                console.log(error);
-            })
+        .catch(()=>{
+            return res.redirect('/')
+        })
+    },
+destroy:(req,res)=>{
+    let id = req.body.id;
+    let filtro = {
+        where:[{
+            id:id
+        }]
     }
+    movie.destroy(filtro)
+    .then((result)=>{
+        return res.redirect('/movies')
+    })
+    .catch((err)=>{
+        console.log(err);
+        return res.redirect('/')
+    })
+}
+
 
 }
 

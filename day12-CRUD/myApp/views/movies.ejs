@@ -12,12 +12,13 @@
                     <%= peliculas[i].release_date %>
                   </div>
               <span class="badge bg-primary rounded-pill"><%= peliculas[i].rating %></span>
-              <div class="fw-bold m-3"><a href="/movies/update/<%= peliculas[i].id %>">Modificar</a></div>
-              <div class="fw-bold m-3">
-                <form action="/movies/delete" method="post">
-                  <input hidden type="number" name="id" value="<%= peliculas[i].id %>">
-                  <button type="submit">Eliminar</button>
-                </form></div>
+                  <div>
+                    <a class="btn btn-primary m-2"  href="/movies/update/<%= peliculas[i].id %> ">Modificar</a>
+                  </div>
+                  <form action="/movies/delete" method="POST">
+                      <input type="text" hidden name="id" id="" value="<%= peliculas[i].id %>">
+                    <input class="btn btn-primary m-2" type="submit" value="Eliminar">
+                    </form>
           </li>
         <% } %>
       </ol>
