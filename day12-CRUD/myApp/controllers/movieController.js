@@ -108,7 +108,7 @@ const movieController = {
 
     },
     destroy: function(req, res){
-        let movieABorrar = req.params.id;
+        let movieABorrar = req.body.id;
         
         db.Movie.destroy({
             where: [

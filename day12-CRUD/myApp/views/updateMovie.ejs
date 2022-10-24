@@ -6,28 +6,28 @@
     <main class="container main-container">
             <!-- Formulario de Registro -->
 
-            <form class="form" action="/movies/register" method="POST">
+            <form class="form" action="/movies/update" method="POST">
               <div class="title">Modificar Pelicula</div>
               <div class="input-container ic1">
                 <input id="id" class="input" type="text" name="id" value="<%= movie.id%> " />
               </div>
               <div class="input-container ic1">
-                <input id="firstname" class="input" type="text" name="titulo" value="<%= movie.title%>" />
+                <input id="title" class="input" type="text" name="title" value="<%= movie.title%>" />
               </div>
               <div class="input-container ic2">
-                <input id="rating" class="input" type="number" name="rating"  min="0" max="10" value=""/>
+                <input id="rating" class="input" type="number" name="rating"  min="0" max="10" value="<%= movie.rating%>"/>
               </div>
               <div class="input-container ic2">
-                <input id="lastname" class="input" type="number" name="premios"  min="0" max="100" value="" />
+                <input id="awards" class="input" type="number" name="awards"  min="0" max="100" value="<%= movie.awards%>" />
               </div>
               <div class="input-container ic2">
-                <input id="email" class="input" type="date" name="fecha" value="" />
+                <input id="release_date" class="input" type="date" name="release_date" value="" />
               </div>
               <div class="input-container ic2">
-                  <input id="duracion" class="input" type="number" name="duracion"  min="10" max="250" value="<%= movie.length%>" />
+                  <input id="length" class="input" type="number" name="length"  min="10" max="250" value="<%= movie.length%>" />
               </div>
                 <div class="input-container ic2">
-                  <select class="seleccion" name="genero" id="genero">
+                  <select class="seleccion" name="genre_id" id="genre_id">
                       <option value="1" selected>Comedia</option>
                       <option value="2">Terror</option>
                       <option value="3">Drama</option>

@@ -13,7 +13,11 @@
                   </div>
               <span class="badge bg-primary rounded-pill"><%= peliculas[i].rating %></span>
               <div class="fw-bold m-3"><a href="/movies/update/<%= peliculas[i].id %>">Modificar</a></div>
-              <div class="fw-bold m-3"><a href="/movies/delete/<%= peliculas[i].id %>">Eliminar</a></div>
+              <div class="fw-bold m-3">
+                <form action="/movies/delete" method="post">
+                  <input hidden type="number" name="id" value="<%= peliculas[i].id %>">
+                  <button type="submit">Eliminar</button>
+                </form></div>
           </li>
         <% } %>
       </ol>

@@ -30,7 +30,8 @@ module.exports =  function(sequelize, dataTypes) {
     Genre.associate = function(models) {
         Genre.hasMany( models.Movie, {
             as : 'movies',
-            foreingKey : 'genre_id'
+            foreingKey : 'genre_id',
+            onDelete: 'cascade' 
         })
     }
 

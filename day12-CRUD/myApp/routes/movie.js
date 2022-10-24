@@ -18,5 +18,5 @@ router.post('/register', movieController.store )
 /**/
 router.get('/update/:id',movieController.update)
 router.post('/update',movieController.updatePost)
-router.post('/delete/:id', movieController.destroy);
+router.post('/delete/', movieController.destroy);
 module.exports = router;
