@@ -76,7 +76,53 @@ const movieController = {
         /* luego la tengo que guardar en la DB */
 
         return res.redirect("/movies");
+    },
+    /*Update*/
+    update:(req,res)=>{
+        let id = req.params.id
+        console.log(id);
+        movie.findByPk(id)
+        .then((result) => {
+           
+            return res.render("updateMovie",{movie:result.dataValues})
+        })
+        .catch((err) =>{
+            return res.redirect("/")
+        });
+        
+
+    },
+    updatePost:(req,res)=>{
+        let filtro = {
+            where:[{id:req.body.id}]
+        }
+        let info=req.body;
+        movie.update(info,filtro)
+        .then((result) => {
+           
+            return res.redirect("/movies");
+        })
+        .catch((err) =>{
+            return res.redirect("/")
+        });
+
+    },
+    destroy: function(req, res){
+        let movieABorrar = req.params.id;
+        
+        db.Movie.destroy({
+            where: [
+                {id : movieABorrar}
+            ]
+        })
+            .then( () => {
+                 return res.redirect('/');
+            })
+            .catch( error => { 
+                console.log(error);
+            })
     }
+
 }
 
 

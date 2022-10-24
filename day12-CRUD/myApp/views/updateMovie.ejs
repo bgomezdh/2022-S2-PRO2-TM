@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head') %>
+  <body>
+    <%- include('./partials/header') %>
+    <main class="container main-container">
+            <!-- Formulario de Registro -->
+
+            <form class="form" action="/movies/register" method="POST">
+              <div class="title">Modificar Pelicula</div>
+              <div class="input-container ic1">
+                <input id="id" class="input" type="text" name="id" value="<%= movie.id%> " />
+              </div>
+              <div class="input-container ic1">
+                <input id="firstname" class="input" type="text" name="titulo" value="<%= movie.title%>" />
+              </div>
+              <div class="input-container ic2">
+                <input id="rating" class="input" type="number" name="rating"  min="0" max="10" value=""/>
+              </div>
+              <div class="input-container ic2">
+                <input id="lastname" class="input" type="number" name="premios"  min="0" max="100" value="" />
+              </div>
+              <div class="input-container ic2">
+                <input id="email" class="input" type="date" name="fecha" value="" />
+              </div>
+              <div class="input-container ic2">
+                  <input id="duracion" class="input" type="number" name="duracion"  min="10" max="250" value="<%= movie.length%>" />
+              </div>
+                <div class="input-container ic2">
+                  <select class="seleccion" name="genero" id="genero">
+                      <option value="1" selected>Comedia</option>
+                      <option value="2">Terror</option>
+                      <option value="3">Drama</option>
+                      <option value="4">Accion</option>
+                  </select>
+                </div>
+              <button type="text" class="submit">Modificar</button>
+  
+  
+            </form>
+            
+
+      
+    </main>
+  </body>
+</html>
