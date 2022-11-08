@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head') %>
+  <body>
+    <%- include('./partials/header') %>
+    <main class="container main-container">
+      <div class="card mb-3 list-group-item" style="max-width: 540px;" >
+        <div class="row g-0">
+          <div class="col-md-4 cont-logo">
+            <img src="/images/movies/logo-netflix.png" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Title: <%= movie.title %> </h5>
+              <p class="card-text">Rating: <%= movie.rating %></p>
+              <p class="card-text">Awards: <%= movie.awards %></p>
+              <p class="card-text">Release Date: <%= movie.release_date %></p>
+              <p class="card-text"><small class="text-muted">length : <%= movie.length %></small></p>
+              <p class="card-text"><small class="text-muted">Genre : <%= movie.genres.name %> </small></p>
+              <p class="card-text"><small class="text-muted">Genre ranking : <%= movie.genres.ranking %> </small></p>
+            </div>
+            <h2>Actores</h2>
+            <ul>
+              <% for( let i = 0; i < movie.actors.length; i++ ) { %>
+              <li><%= movie.actors[i].first_name %> </li>
+              <% } %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

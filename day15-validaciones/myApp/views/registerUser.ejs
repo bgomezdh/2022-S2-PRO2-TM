@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head') %>
+  <body>
+    <%- include('./partials/header') %>
+    <main class="container main-container">
+
+      <!-- Formulario de Registro -->
+
+      <form class="form" action="/users/register" method="POST" enctype="multipart/form-data">
+        <div class="title">Registrate</div>
+
+        <!-- Mensaje de error -->
+
+        <% if (locals.errors) { %>
+          <p class="error"  style="color:red"><%= locals.errors.message %> </p>
+        <% } %>
+
+
+        <div class="input-container ic1">
+          <input id="name" class="input" type="text" name="name" placeholder="name"/>
+      </div>
+        <div class="input-container ic1">
+            <input id="email" class="input" type="email" name="email" placeholder="email"  />
+        </div>
+
+        <div class="input-container ic1">
+            <input id="password" class="input" type="password" name="password" placeholder="Clave" />
+        </div>
+
+        <!-- input file -->
+
+        <div class="input-container ic1">
+          <input id="imgPerfil" class="input" type="file" name="imgPerfil"/>
+        </div>
+        <button type="text" class="submit">submit</button>
+      </form>
+    </main>
+  </body>
+</html>
